@@ -5,3 +5,22 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+campuses = Campus.create([
+  { name: 'San Joaquín', default: true },
+  { name: 'Lo Contador', default: false },
+  { name: 'Oriente', default: false },
+  { name: 'Casa Central', default: false }
+])
+
+blocks = Block.create([
+  { start_time: '08:30', end_time: '09:50' },
+  { start_time: '10:00', end_time: '11:20' },
+  { start_time: '11:30', end_time: '12:50' },
+  { start_time: '14:00', end_time: '15:20' },
+  { start_time: '15:30', end_time: '16:50' },
+  { start_time: '17:00', end_time: '18:20' },
+  { start_time: '18:30', end_time: '19:50' },
+  { start_time: '20:00', end_time: '21:20' }
+])

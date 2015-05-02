@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title BuscaSalas UC
+
+    == stylesheet_link_tag "application", params[:controller], :media => "all", "data-turbolinks-track" => true
+    == javascript_include_tag "application", params[:controller], "data-turbolinks-track" => true
+
+    == csrf_meta_tags
+  body
+    .row
+      .col-lg-6.col-lg-offset-3
+        .header
+          h1.text-muted.text-center Buscador de Salas Vacías UC
+    .row
+      .col-lg-6.col-lg-offset-3
+        == yield
+
+    .row
+      .col-lg-6.col-lg-offset-3
+        footer.footer.text-right
+          p &copy; Ariel - 2015
+
