@@ -8,16 +8,17 @@ html
 
     == csrf_meta_tags
   body
-    .row
-      .col-lg-6.col-lg-offset-3
-        .header
-          h1.text-muted.text-center Buscador de Salas Vacías UC
-    .row
-      .col-lg-6.col-lg-offset-3
-        == yield
+    .container
+      .row
+        .col-lg-6.col-lg-offset-3
+          .header
+            h1.text-muted.text-center Buscador de Salas Vacías UC
+      .row
+        .col-lg-6.col-lg-offset-3
+          == yield
 
-    .row
-      .col-lg-6.col-lg-offset-3
-        footer.footer.text-right
-          p &copy; Ariel - 2015
+      .row
+        .col-lg-6.col-lg-offset-3
+          footer.footer.text-right
+            p &copy; Ariel - 2015
 

@@ -9,9 +9,9 @@
 
 campuses = Campus.create([
   { name: 'San Joaquín', default: true },
+  { name: 'Casa Central', default: false },
   { name: 'Lo Contador', default: false },
-  { name: 'Oriente', default: false },
-  { name: 'Casa Central', default: false }
+  { name: 'Oriente', default: false }
 ])
 
 blocks = Block.create([
