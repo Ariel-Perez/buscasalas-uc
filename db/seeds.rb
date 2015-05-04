@@ -24,3 +24,20 @@ blocks = Block.create([
   { start_time: '18:30', end_time: '19:50' },
   { start_time: '20:00', end_time: '21:20' }
 ])
+
+classrooms = Classroom.create([
+  { name: 'A1', campus_id: 1 },
+  { name: 'A2', campus_id: 1 },
+  { name: 'A3', campus_id: 1 },
+  { name: 'A4', campus_id: 1 },
+  { name: 'A5', campus_id: 1 },
+  { name: 'A6', campus_id: 1 },
+])
+
+classrooms.each do |classroom|
+  blocks.each do |block|
+    if classroom.id != block.id
+      Schedule.create({ classroom_id: classroom.id, block_id: block.id, activity: 'Algo', date: DateTime.now.to_date })
+    end
+  end
+end

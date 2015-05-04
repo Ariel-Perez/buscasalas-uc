@@ -1,31 +1,32 @@
-form
+form method="post" action="query"
+  input name="authenticity_token" value="{#form_authenticity_token}" type="hidden"
   .row
     .col-lg-6
       h3.text-center.text-muted
-        == "Selecciona Módulos"
+        | Selecciona Módulos
 
       - @blocks.each do |block|
 
         span class="button-checkbox"
           button type="button" class="btn btn-lg btn-wide" data-color="primary"
-            == block.start_time + ' - ' + block.end_time
-          input.hidden type="checkbox"
+            = block.timespan
+          input.hidden type="checkbox" name= "block[#{block.id}]"
 
     .col-lg-6
       h3.text-center.text-muted
-        == "Selecciona Campus"
+        | Selecciona Campus
 
       - @campuses.each do |campus|
 
         span class="button-checkbox"
           button type="button" class="btn btn-lg btn-wide" data-color="primary"
-            == campus.name
+            = campus.name
           - if campus.default
-            input.hidden type="checkbox" checked=""
+            input.hidden type="checkbox" checked="" name="campus[#{campus.id}]"
           - else
-            input.hidden type="checkbox"
+            input.hidden type="checkbox" name="campus[#{campus.id}]"
 
   .row
     .col-lg-12
       hr
-      input.btn.btn-lg.btn-wide.btn-success type="submit"
+      input.btn.btn-lg.btn-wide.btn-success type="submit" value="Buscar" data-disable-with="Procesando..."

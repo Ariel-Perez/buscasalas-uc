@@ -1,0 +1,45 @@
+.row
+  .col-lg-12
+
+    h3.text-center.text-muted.text-primary
+      | Resultado de Búsqueda:
+
+    h4.text-center.text-muted
+      == "Módulo".pluralize(@blocks.length) + " " + conjunction(@block_ids) + " en Campus " + disjunction(@campus_names)
+
+.row
+    .col-lg-6
+      h3.text-center.text-muted
+        | Módulo Solicitado
+    .col-lg-6
+      h3.text-center.text-muted
+        | Sala Disponible
+- @options.each_with_index do |option, index|
+  .row
+    .col-lg-6
+      .btn.btn-lg.btn-wide.btn-default
+        /h4.text-center.text-muted
+        = @blocks[index].timespan
+    .col-lg-6
+      .btn-group.btn-block
+        button.btn.dropdown-lg.btn-default.col-md-11 type="button"
+          = @best[index].name
+        button.btn.dropdown-lg.btn-default.dropdown-toggle.col-md-1 type="button" data-toggle="dropdown" aria-expanded="false"
+          span.caret
+          span.sr-only
+            | Toggle
+        ul.dropdown-menu.col-md-11 role="menu"
+          - option.each do |classroom|
+            li
+              a href="#"
+                = classroom.name
+
+        /.btn.btn-lg.btn-wide.btn-default
+        /  = @best[index].name
+
+      /.list-group
+        /- option.each do |classroom|
+        /  .btn.btn-lg.btn-wide.btn-default
+        /    = classroom.name
+          /a.list-group-item href="" 
+          /  == classroom.name
