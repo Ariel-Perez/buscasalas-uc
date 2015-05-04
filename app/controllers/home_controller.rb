@@ -20,7 +20,10 @@ class HomeController < ApplicationController
   end
 
   def update
-    @last_update = Schedule.order(date: :desc).first.date
+    latest = Schedule.order(date: :desc).first
+    if latest
+      @last_update = latest.date
+    end
   end
 
   private
