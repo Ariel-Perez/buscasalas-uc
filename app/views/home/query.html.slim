@@ -22,24 +22,20 @@
         = @blocks[index].timespan
     .col-lg-6
       .btn-group.btn-block
-        button.btn.dropdown-lg.btn-default.col-md-11 type="button"
+        button.btn.dropdown-lg.btn-default.col-lg-11 type="button"
           = @best[index].name
-        button.btn.dropdown-lg.btn-default.dropdown-toggle.col-md-1 type="button" data-toggle="dropdown" aria-expanded="false"
+        button.btn.dropdown-lg.btn-default.dropdown-toggle.col-lg-1 type="button" data-toggle="dropdown" aria-expanded="false"
           span.caret
           span.sr-only
             | Toggle
-        ul.dropdown-menu.col-md-11 role="menu"
+        ul.dropdown-menu.col-lg-11 role="menu"
           - option.each do |classroom|
             li
               a href="#"
                 = classroom.name
 
-        /.btn.btn-lg.btn-wide.btn-default
-        /  = @best[index].name
-
-      /.list-group
-        /- option.each do |classroom|
-        /  .btn.btn-lg.btn-wide.btn-default
-        /    = classroom.name
-          /a.list-group-item href="" 
-          /  == classroom.name
+.row
+  .col-lg-12
+    hr
+    a.btn.btn-lg.btn-wide.btn-success href="/home/index"
+      | Nueva Búsqueda
