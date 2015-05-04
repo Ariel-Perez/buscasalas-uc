@@ -6,8 +6,6 @@ gem 'rails', '4.2'
 #Parser
 gem 'slim-rails'
 
-gem 'activerecord-import'
-
 group :development do
   gem 'annotate'
   gem 'awesome_print'
