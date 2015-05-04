@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: classrooms
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  campus_id  :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Classroom < ActiveRecord::Base
   belongs_to :campus
   has_many :schedules

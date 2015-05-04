@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: campus
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  created_at :datetime
+#  updated_at :datetime
+#  default    :boolean
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

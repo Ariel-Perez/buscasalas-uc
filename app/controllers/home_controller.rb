@@ -24,6 +24,14 @@ class HomeController < ApplicationController
     if latest
       @last_update = latest.date
     end
+
+
+    page = Nokogiri::HTML(open("salacampus_2_semana02.html"))   
+    puts page.class   # => Nokogiri::HTML::Document
+    #puts page.xpath("/html/body/table/tbody/tr[9]/td/table").to_s #{}"//table").to_s
+    
+    Schedule.build(page)
+    #puts page.at_css("//html/body/table/tr[9]/td/table").to_s
   end
 
   private
