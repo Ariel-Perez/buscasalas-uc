@@ -23,5 +23,5 @@ production:
   encoding: unicode
   database: buscasalas_production
   pool: 5
-  username: admin
-  password:
+  username: postgres
+  password: 123456
