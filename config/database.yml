@@ -24,4 +24,4 @@ production:
   database: buscasalas_production
   pool: 5
   username: admin
-  password: 123456
+  password: '123456'
