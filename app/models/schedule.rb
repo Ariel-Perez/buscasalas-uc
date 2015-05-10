@@ -17,6 +17,18 @@ class Schedule < ActiveRecord::Base
 
 
   def self.build(file, campus_id = 1)
+    date_string = file.at_ccs("//html/body/table/tr[7]/td/font/b/font").inner_html
+    date_info = date_string.split(' ')
+
+    months = { 'enero' => 1, 'febrero' => 2, 'marzo' => 3, 'abril' => 4, 'mayo' => 5, 'junio' => 6, 
+                'julio' => 7, 'agosto' => 8, 'septiembre' => 9, 'octubre' => 10, 'noviembre' => 11, 'diciembre' => 12 }
+
+    year = DateTime.now.year
+    month = months[date_info[6]]
+    day = date_info[2].to_i
+
+    first_day = DateTime.new( year, month, day )
+
     table = file.at_css("//html/body/table/tr[9]/td/table")
 
     n_rows = 179
@@ -37,7 +49,7 @@ class Schedule < ActiveRecord::Base
         data.strip!
 
         if data != "xxxxxxxxxxxxxxx"
-          schedules << { block_id: block, classroom_id: c.id, date: DateTime.now.to_date + d.days, activity: data }
+          schedules << { block_id: block, classroom_id: c.id, date: first_day + d.days, activity: data }
         end
       end
     end

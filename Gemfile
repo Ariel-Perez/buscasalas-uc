@@ -3,8 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2'
 
-#Parser
+# Parser
 gem 'slim-rails'
+
+# Async Job Scheduler
+gem 'daemons-rails'
 
 group :development do
   gem 'annotate'

@@ -30,8 +30,6 @@ GEM
       activemodel (= 4.2.0)
       activesupport (= 4.2.0)
       arel (~> 6.0)
-    activerecord-import (0.7.0)
-      activerecord (>= 3.0)
     activesupport (4.2.0)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -58,6 +56,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    daemons (1.2.2)
+    daemons-rails (1.2.1)
+      daemons
+      multi_json (~> 1.0)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.5.2)
@@ -170,12 +172,12 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  activerecord-import
   annotate
   awesome_print
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
+  daemons-rails
   font-awesome-rails
   jbuilder (~> 1.2)
   jquery-rails
